@@ -16,6 +16,9 @@ return {
 }
 ```
 
+> [!NOTE]
+> Install and configure Precognition seperately and as normal to if you want to configure it as well.
+
 ## Config
 This fork modfifies the default config to set `w`, `b`, and `e` (as well as their capital/shift variants) as restricted keys too.
 See [config.lua](lua/hardtime/config.lua)
