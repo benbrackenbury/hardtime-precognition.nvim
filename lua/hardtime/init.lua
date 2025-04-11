@@ -115,6 +115,7 @@ local function handler(key)
             message = message .. " Use [count]j or CTRL-D to scroll down."
          end
          util.notify(message)
+         require("precognition").peek()
       end)
    end
 
