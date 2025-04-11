@@ -1,4 +1,21 @@
-Hardtime but shows [Precognition hints](https://github.com/tris203/precognition.nvim) when keys are repeated too often.
+# Hardtime but shows <a href='https://github.com/tris203/precognition.nvim'>Precognition hints</a> when keys are repeated too often.
+
+## Installation
+lazy
+
+```lua
+return {
+    "benbrackenbury/hardtime-precognition.nvim",
+    dependencies = {
+        "MunifTanjim/nui.nvim",
+        "tris203/precognition.nvim",
+    },
+    config = function()
+        require("hardtime").setup()
+    end
+}
+```
+
 
 <br />
 <hr />
