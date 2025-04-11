@@ -3,6 +3,25 @@ local M = {}
 M.config = {
    -- new options
    enable_precognition = true,
+   -- restrict w,b,e,W,B,E by default too
+   restricted_keys = {
+      ["h"] = { "n", "x" },
+      ["j"] = { "n", "x" },
+      ["k"] = { "n", "x" },
+      ["l"] = { "n", "x" },
+      ["+"] = { "n", "x" },
+      ["gj"] = { "n", "x" },
+      ["gk"] = { "n", "x" },
+      ["<C-M>"] = { "n", "x" },
+      ["<C-N>"] = { "n", "x" },
+      ["<C-P>"] = { "n", "x" },
+      ["w"] = { "n", "x" },
+      ["b"] = { "n", "x" },
+      ["e"] = { "n", "x" },
+      ["W"] = { "n", "x" },
+      ["B"] = { "n", "x" },
+      ["E"] = { "n", "x" },
+   },
    -- default hardtime options
    max_time = 1000,
    max_count = 3,
@@ -50,18 +69,6 @@ M.config = {
       ["g?"] = { "n" },
    },
    restriction_mode = "block", -- block or hint
-   restricted_keys = {
-      ["h"] = { "n", "x" },
-      ["j"] = { "n", "x" },
-      ["k"] = { "n", "x" },
-      ["l"] = { "n", "x" },
-      ["+"] = { "n", "x" },
-      ["gj"] = { "n", "x" },
-      ["gk"] = { "n", "x" },
-      ["<C-M>"] = { "n", "x" },
-      ["<C-N>"] = { "n", "x" },
-      ["<C-P>"] = { "n", "x" },
-   },
    disabled_keys = {
       ["<Up>"] = { "", "i" },
       ["<Down>"] = { "", "i" },
@@ -121,9 +128,9 @@ M.config = {
       ["[kj][%^_]"] = {
          message = function(key)
             return "Use "
-               .. (key:sub(1, 1) == "k" and "-" or "<CR> or +")
-               .. " instead of "
-               .. key
+                .. (key:sub(1, 1) == "k" and "-" or "<CR> or +")
+                .. " instead of "
+                .. key
          end,
          length = 2,
       },
@@ -256,120 +263,120 @@ M.config = {
       ["V%d[kj][dcy=<>]"] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(4, 4)
-               .. keys:sub(2, 3)
-               .. " instead of "
-               .. keys
+                .. keys:sub(4, 4)
+                .. keys:sub(2, 3)
+                .. " instead of "
+                .. keys
          end,
          length = 4,
       },
       ['V%d[kj]".[dy]'] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(4, 6)
-               .. keys:sub(2, 3)
-               .. " instead of "
-               .. keys
+                .. keys:sub(4, 6)
+                .. keys:sub(2, 3)
+                .. " instead of "
+                .. keys
          end,
          length = 6,
       },
       ["V%d%d[kj][dcy=<>]"] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(5, 5)
-               .. keys:sub(2, 4)
-               .. " instead of "
-               .. keys
+                .. keys:sub(5, 5)
+                .. keys:sub(2, 4)
+                .. " instead of "
+                .. keys
          end,
          length = 5,
       },
       ['V%d%d[kj]".[dy]'] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(5, 7)
-               .. keys:sub(2, 4)
-               .. " instead of "
-               .. keys
+                .. keys:sub(5, 7)
+                .. keys:sub(2, 4)
+                .. " instead of "
+                .. keys
          end,
          length = 7,
       },
       ["[vV][eE][dcy]"] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(3, 3)
-               .. keys:sub(2, 2)
-               .. " instead of "
-               .. keys
+                .. keys:sub(3, 3)
+                .. keys:sub(2, 2)
+                .. " instead of "
+                .. keys
          end,
          length = 3,
       },
       ['[vV][eE]".[dy]'] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(3, 5)
-               .. keys:sub(2, 2)
-               .. " instead of "
-               .. keys
+                .. keys:sub(3, 5)
+                .. keys:sub(2, 2)
+                .. " instead of "
+                .. keys
          end,
          length = 5,
       },
       ["[vV]g[eE][dcy]"] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(4, 4)
-               .. keys:sub(2, 3)
-               .. " instead of "
-               .. keys
+                .. keys:sub(4, 4)
+                .. keys:sub(2, 3)
+                .. " instead of "
+                .. keys
          end,
          length = 4,
       },
       ['[vV]g[eE]".[dy]'] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(4, 6)
-               .. keys:sub(2, 3)
-               .. " instead of "
-               .. keys
+                .. keys:sub(4, 6)
+                .. keys:sub(2, 3)
+                .. " instead of "
+                .. keys
          end,
          length = 6,
       },
       ["[vV][tTfF].[dcy]"] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(4, 4)
-               .. keys:sub(2, 3)
-               .. " instead of "
-               .. keys
+                .. keys:sub(4, 4)
+                .. keys:sub(2, 3)
+                .. " instead of "
+                .. keys
          end,
          length = 4,
       },
       ['[vV][tTfF].".[dy]'] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(4, 6)
-               .. keys:sub(2, 3)
-               .. " instead of "
-               .. keys
+                .. keys:sub(4, 6)
+                .. keys:sub(2, 3)
+                .. " instead of "
+                .. keys
          end,
          length = 6,
       },
       ["[vV][ia][\"'`{}%[%]()<>bBwWspt][dcy=<>]"] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(4, 4)
-               .. keys:sub(2, 3)
-               .. " instead of "
-               .. keys
+                .. keys:sub(4, 4)
+                .. keys:sub(2, 3)
+                .. " instead of "
+                .. keys
          end,
          length = 4,
       },
       ['[vV][ia]["\'`{}%[%]()<>bBwWspt]".[dy]'] = {
          message = function(keys)
             return "Use "
-               .. keys:sub(4, 6)
-               .. keys:sub(2, 3)
-               .. " instead of "
-               .. keys
+                .. keys:sub(4, 6)
+                .. keys:sub(2, 3)
+                .. " instead of "
+                .. keys
          end,
          length = 6,
       },
