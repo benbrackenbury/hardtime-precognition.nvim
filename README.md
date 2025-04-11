@@ -1,3 +1,9 @@
+Hardtime but shows [Precognition hints](https://github.com/tris203/precognition.nvim) when keys are repeated too often.
+
+<br />
+<hr />
+<br />
+
 <!-- panvimdoc-ignore-start -->
 
 <h1 align="center">
