@@ -12,7 +12,8 @@ return {
     },
     config = function()
         require("hardtime").setup()
-    e
+    end
+}
 ```
 
 ## Config
