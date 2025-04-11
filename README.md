@@ -12,9 +12,12 @@ return {
     },
     config = function()
         require("hardtime").setup()
-    end
-}
+    e
 ```
+
+## Config
+This fork modfifies the default config to set `w`, `b`, and `e` (as well as their capital/shift variants) as restricted keys too.
+See [config.lua](lua/hardtime/config.lua)
 
 
 <br />
