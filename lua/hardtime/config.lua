@@ -1,6 +1,9 @@
 local M = {}
 
 M.config = {
+   -- new options
+   enable_precognition = true,
+   -- default hardtime options
    max_time = 1000,
    max_count = 3,
    disable_mouse = true,

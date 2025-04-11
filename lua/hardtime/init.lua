@@ -1,4 +1,5 @@
 local util = require("hardtime.util")
+local precognition = require("precognition")
 
 local key_count = 0
 local last_key = ""
@@ -115,13 +116,17 @@ local function handler(key)
             message = message .. " Use [count]j or CTRL-D to scroll down."
          end
          util.notify(message)
-         require("precognition").peek()
       end)
    end
 
    if config.restriction_mode == "hint" then
       return get_return_key(key)
    end
+
+   if config.enable_precognition then
+      precognition.peek()
+   end
+
    return ""
 end
 
